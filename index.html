@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Benjamin Hannan</title>
+  <meta name="description" content="High school junior at Hanover High, NH. Polyagent (a live streaming ML stack on Polymarket), Cadence (an ML swing model on the Russell 1000), longitudinal NLP research on mental-health language, and shipping work on Trace and FineHero." />
+  <meta name="author" content="Benjamin Hannan" />
+
+  <meta name="theme-color" content="#faf7ee" />
+
+  <meta property="og:title" content="Benjamin Hannan" />
+  <meta property="og:description" content="Polyagent, Cadence, NLP research, Trace, FineHero. High school junior in Hanover, NH." />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="progress-bar" aria-hidden="true"><span class="progress-fill"></span></div>
+
+  <!-- Chapter rail: fixed-position scrollytelling spine -->
+  <nav class="chapter-rail" aria-label="Section index">
+    <ol>
+      <li data-target="top"        ><a href="#top"       ><span class="rail-num">00</span><span class="rail-label">Intro</span></a></li>
+      <li data-target="polyagent"  ><a href="#polyagent" ><span class="rail-num">01</span><span class="rail-label">Polyagent</span></a></li>
+      <li data-target="research"   ><a href="#research"  ><span class="rail-num">02</span><span class="rail-label">Research</span></a></li>
+      <li data-target="cadence"    ><a href="#cadence"   ><span class="rail-num">03</span><span class="rail-label">Cadence</span></a></li>
+      <li data-target="building"   ><a href="#building"  ><span class="rail-num">04</span><span class="rail-label">Building</span></a></li>
+      <li data-target="now"        ><a href="#now"       ><span class="rail-num">05</span><span class="rail-label">Now</span></a></li>
+      <li data-target="background" ><a href="#background"><span class="rail-num">06</span><span class="rail-label">Background</span></a></li>
+      <li data-target="contact"    ><a href="#contact"   ><span class="rail-num">07</span><span class="rail-label">Contact</span></a></li>
+    </ol>
+  </nav>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary">
+      <a href="#top" class="nav-brand">
+        <span class="brand-monogram">BH</span>
+        <span class="brand-name">Benjamin Hannan</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#polyagent">Polyagent</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#cadence">Cadence</a></li>
+        <li><a href="#building">Building</a></li>
+        <li><a href="#now">Now</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- ============= HERO ============= -->
+    <section class="hero">
+      <div class="hero-parallax">
+        <div class="hero-glow"></div>
+      </div>
+
+      <div class="hero-inner">
+        <p class="eyebrow">Hanover, New Hampshire &nbsp;&middot;&nbsp; rev. May 2026</p>
+        <h1 class="display hero-title">
+          <span class="hero-title-row">Benjamin</span>
+          <span class="hero-title-row">Hannan</span>
+        </h1>
+
+        <div class="hero-body">
+          <p class="lede">
+            I'm a junior at Hanover High. I build live ML systems &mdash; <em>prediction markets</em>, quantitative trading, and NLP research on mental-health language.
+          </p>
+          <p class="hero-bio">
+            Polyagent streams roughly 1,150 Polymarket order books through a 422-feature ensemble and trades behind a sixteen-gate risk layer. Cadence is an ML swing model I paper-trade on the Russell 1000. My longitudinal NLP study asks whether you can see a mental-health crisis coming in how someone writes, two weeks before it lands. I'm also shipping Trace for the Congressional App Challenge, building the ML for FineHero, taking ML coursework at Dartmouth, and leading my school's investment club.
+          </p>
+        </div>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#polyagent">see the work <span class="btn-arrow" aria-hidden="true">&rarr;</span></a>
+          <a class="btn btn-ghost" href="https://github.com/benjaminhannan" target="_blank" rel="noopener">github</a>
+          <a class="btn btn-ghost" href="mailto:benjamin.a.hannan@gmail.com">email</a>
+        </div>
+      </div>
+
+      <ul class="hero-stats" aria-label="Headline numbers across active systems">
+        <li class="scene">
+          <span class="stat-num" data-count="1150">0</span>
+          <span class="stat-label">live Polymarket order books streamed</span>
+        </li>
+        <li class="scene">
+          <span class="stat-num" data-count="0.688" data-decimals="3">0</span>
+          <span class="stat-label">macro AUC, Reddit NLP study, 5-fold CV</span>
+        </li>
+        <li class="scene">
+          <span class="stat-num" data-count="1.97" data-decimals="2">0</span>
+          <span class="stat-label">Cadence Sharpe, walk-forward, with overlays</span>
+        </li>
+      </ul>
+
+      <div class="scroll-hint" aria-hidden="true">
+        <span class="scroll-hint-label">scroll</span>
+        <span class="scroll-hint-line"></span>
+      </div>
+    </section>
+
+    <!-- ============= POLYAGENT ============= -->
+    <section id="polyagent" class="section section-dark scrolly">
+      <div class="section-heading">
+        <p class="section-marker"><span class="section-num">01</span><span class="section-label">Polyagent</span></p>
+        <h2 class="display">A streaming ML stack for <em>prediction markets</em>.</h2>
+        <p class="meta meta-light">
+          Started 2025. ~1,150 live Polymarket order books, streamed over WebSocket. Production risk layer between signal and execution.
+        </p>
+      </div>
+
+      <div class="section-scenes">
+        <ul class="hero-stats" aria-label="Polyagent headline numbers">
+          <li class="scene">
+            <span class="stat-num" data-count="1150">0</span>
+            <span class="stat-label">live order books streamed</span>
+          </li>
+          <li class="scene">
+            <span class="stat-num" data-count="422">0</span>
+            <span class="stat-label">LightGBM features per market</span>
+          </li>
+          <li class="scene">
+            <span class="stat-num" data-count="16">0</span>
+            <span class="stat-label">risk gates between signal and execution</span>
+          </li>
+        </ul>
+
+        <div class="case-study">
+          <div class="case-row scene">
+            <h3 class="case-label">The model</h3>
+            <p>A 422-feature LightGBM with isotonic calibration scores per-market edge. A per-category SLSQP log-pool combiner fuses those signals into coherent priors across correlated events, so the system doesn't end up long both sides of a logical contradiction.</p>
+          </div>
+
+          <div class="case-row scene">
+            <h3 class="case-label">The news layer</h3>
+            <p>A bi-encoder / cross-encoder RAG pipeline retrieves fresh evidence at inference time and injects it into the feature set. Markets move on facts that aren't in price yet, and the news layer's job is to get those facts into the model before the order book does.</p>
+          </div>
+
+          <div class="case-row scene">
+            <h3 class="case-label">Arb &amp; risk</h3>
+            <p>A combinatorial arbitrage detector sweeps for inconsistent pricing across correlated markets &mdash; the kind of mispricing that shows up when two markets describe the same event from different angles. Sixteen risk gates sit between any of that and live execution: position caps, drawdown limits, latency checks, market-state sanity, and so on.</p>
+          </div>
+
+          <div class="case-row scene">
+            <h3 class="case-label">Where it's heading</h3>
+            <p>Three directions in flight. <strong>Queue-aware execution modeling</strong>, so the engine stops assuming it gets filled at the top of book. <strong>Switching LightGBM's objective</strong> from pointwise regression to LambdaRank with NegRisk event grouping &mdash; the right loss for cross-market ranking. <strong>A RAG-grounded LLM forecaster</strong> as a fourth expert in the ensemble, alongside the gradient-boosted edge model, the log-pool combiner, and the news layer.</p>
+          </div>
+
+          <div class="case-row scene">
+            <h3 class="case-label">What I'm not claiming</h3>
+            <p>This is paper / small-stakes territory. The combinatorial arb sweep finds many candidates a day; most are illiquid or eaten by fees once you size them. Polymarket's microstructure is its own discipline and I'm still climbing the queue-dynamics learning curve, which is why queue-aware execution is the next milestone &mdash; the gap between "the model thinks there's edge" and "the engine actually captures it" is real and largely unmeasured in retail.</p>
+          </div>
+        </div>
+
+        <p class="trade-stack scene">
+          Stack: LightGBM, FAISS, sentence-transformers, SLSQP log-pool, isotonic calibration, Polymarket WebSocket, bi-encoder / cross-encoder RAG, combinatorial arbitrage.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============= NLP RESEARCH ============= -->
+    <section id="research" class="section section-dark scrolly">
+      <div class="section-heading">
+        <p class="section-marker"><span class="section-num">02</span><span class="section-label">Research</span></p>
+        <h2 class="display">Longitudinal Linguistic Markers of Mental Health Deterioration in Online Communities</h2>
+        <p class="meta meta-light">
+          Independent study, arXiv preprint going up first, then submitting to <a href="https://clpsych.org/" target="_blank" rel="noopener">CLPsych 2027</a>, NHSJS, and JSR. Mentored by Taka Khoo (master's, Dartmouth ML) and Aditya Gaur (Dartmouth).
+        </p>
+      </div>
+
+      <div class="section-scenes">
+        <div class="case-study">
+          <div class="case-row scene">
+            <h3 class="case-label">What I asked</h3>
+            <p>If someone is heading into a mental-health crisis, can you see it in how they were writing two weeks earlier? And&mdash;maybe more interesting&mdash;does <em>when</em> they post (rhythm, frequency, gaps) carry information that the words alone don't?</p>
+          </div>
+
+          <div class="case-row scene">
+            <h3 class="case-label">How I did it</h3>
+            <p>
+              96,073 posts pulled from five subreddits: r/depression, r/OCD, r/PTSD, r/ADHD, r/aspergers, dated mid-2019 to late-2021<a class="ref" href="#fn-dataset" id="ref-dataset">[1]</a>. I labeled 132 users as crisis, recovery, or neither, ran feature extraction across sentiment (VADER), content (MentalBERT), embeddings, and posting timing, and trained a Random Forest with 5-fold cross-validation.
+            </p>
+            <aside class="sidenote">
+              Whole pipeline runs on my laptop. No GPU cluster. Code goes public once the preprint is up.
+            </aside>
+          </div>
+
+          <div class="case-row scene">
+            <h3 class="case-label">The numbers</h3>
+            <ul class="findings">
+              <li><strong>Macro AUC 0.688</strong> on a 127-feature kitchen-sink model. Well above the 0.5 chance baseline, not state-of-the-art for the field. Honest.</li>
+              <li><strong>Temporal features carry the largest single bump</strong>: +0.027 AUC over a content-only baseline. The rhythm of when someone writes is doing real work.</li>
+              <li><strong>First-person pronoun z-scores split crisis from recovery by eight standard deviations.</strong> Crisis cohort: &minus;5.36. Recovery cohort: +3.07. This replicates a well-known finding in depression-and-language research.</li>
+              <li><strong>Unsupervised change-point detection (PELT) barely beats chance.</strong> 0.153 hit rate at &plusmn;2 weeks vs. 0.114 null. Supervised learning is doing the heavy lifting.</li>
+            </ul>
+          </div>
+
+          <div class="case-row scene">
+            <h3 class="case-label">What I think it means</h3>
+            <p>Most prior work treats each post as a bag of words. The headline finding here is that <em>when</em> someone writes is at least as informative as <em>what</em> they write, and the two signals are additive instead of redundant. Temporal features are also harder to fake and easier to track at population scale than vocabulary, which I find more interesting than the AUC number.</p>
+          </div>
+
+          <div class="case-row scene">
+            <h3 class="case-label">What I'm not claiming</h3>
+            <p>This isn't a clinical tool. It's not an "early warning system" you can drop on individuals. Every output is an aggregate population-level statistic on anonymized public data, the labels are linguistic patterns and not diagnoses, and the keyword labeling itself is something I want a human to spot-check before submission.</p>
+          </div>
+        </div>
+
+        <ol class="footnotes">
+          <li id="fn-dataset"><span class="fn-num">[1]</span> Dataset: <code>solomonk/reddit_mental_health_posts</code> on HuggingFace. <a href="#ref-dataset" aria-label="back to text">&crarr;</a></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============= CADENCE ============= -->
+    <section id="cadence" class="section scrolly">
+      <div class="section-heading">
+        <p class="section-marker"><span class="section-num">03</span><span class="section-label">Cadence</span></p>
+        <h2 class="display">A cross-sectional ML swing model for the <em>Russell 1000</em>.</h2>
+        <p class="meta">
+          Started 2025. Four-year walk-forward backtest with CPCV. Paper-trading pipeline deployed against Alpaca.
+        </p>
+      </div>
+
+      <div class="section-scenes">
+        <ul class="hero-stats" aria-label="Cadence headline numbers">
+          <li class="scene">
+            <span class="stat-num" data-count="1.97" data-decimals="2">0</span>
+            <span class="stat-label">Sharpe, walk-forward, with overlays</span>
+          </li>
+          <li class="scene">
+            <span class="stat-num" data-count="55" data-suffix="%">0</span>
+            <span class="stat-label">CAGR vs. 13% benchmark</span>
+          </li>
+          <li class="scene">
+            <span class="stat-num" data-count="13">0</span>
+            <span class="stat-label">feature-augmentation phases, all rejected</span>
+          </li>
+        </ul>
+
+        <p class="scene">
+          Every twenty trading days Cadence ranks every name in the Russell 1000 with a rank-average ensemble of LightGBM (gradient-boosted trees regressing sector-demeaned forward returns on roughly forty technical features) and N-HiTS (a hierarchical neural forecaster). The top decile goes into an equal-weighted long-only portfolio. Transaction costs are modeled at five basis points. Two opt-in risk overlays sit on top: drawdown-aware position scaling, and a tail-hedge stack calibrated against bear-market regimes.
+        </p>
+        <p class="scene">
+          Walk-forward over 2022 to 2025 with both overlays engaged: Sharpe 1.97, CAGR 55%, max drawdown &minus;12.4%. The unhedged baseline (no overlays) reads Sharpe 1.21, CAGR 39%, drawdown &minus;22%, with a deflated probabilistic Sharpe of 0.983 after correcting for multiple testing. That 1.21 is the more defensible number across regimes; the 1.97 is what you get when the tail hedge fires. The S&amp;P 500 equal-weight benchmark over the same window comes in at Sharpe 0.82 and CAGR 13%, and Cadence's edge over the benchmark is positive in every individual year.
+        </p>
+        <p class="scene">
+          Across thirteen phases of feature ablation (sentiment, macro, insider activity, short interest, earnings surprise, and more) every signal augmentation I tested failed to clear my +0.2 Sharpe gate. <strong>The cross-sectional technical baseline looks saturated</strong>, which is itself the most useful finding I have. The next two moves: a deterministic 8-K hard-exit overlay (event-driven risk-off rather than another return-predictive feature), and flipping LightGBM's objective to LambdaRank / rank_xendcg, which is closer to what the model is actually being scored on. I'm also evaluating swapping N-HiTS for <strong>Kronos-base</strong> or <strong>PortfolioMASTER</strong> as the forecasting half of the ensemble.
+        </p>
+        <p class="scene">
+          Status: the paper-trading pipeline runs against the Alpaca API. Live capital is gated on three months of paper data where live-vs-backtest Sharpe tracks within 50 percent, then a manual unlock; first deployment is capped at $500.
+        </p>
+        <p class="trade-stack scene">
+          Stack: LightGBM, NeuralForecast (N-HiTS, PyTorch, GPU), Qlib, Alpaca, walk-forward CPCV with strict point-in-time data, Politis&ndash;Romano bootstrap for confidence intervals, Deflated Sharpe Ratio.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============= OTHER BUILDS ============= -->
+    <section id="building" class="section section-cream scrolly">
+      <div class="section-heading">
+        <p class="section-marker"><span class="section-num">04</span><span class="section-label">Shipping</span></p>
+        <h2 class="display">Three more things on the bench.</h2>
+      </div>
+
+      <div class="section-scenes">
+        <article class="work-item scene">
+          <div class="work-meta">
+            <p class="work-tag">Congressional App Challenge</p>
+            <p class="work-role">2026 &middot; NH-02</p>
+          </div>
+          <div class="work-body">
+            <h3>Trace</h3>
+            <p>
+              A Lyme-disease tracking app built in Expo / React Native. Submission for the 2026 Congressional App Challenge in NH-02 (Rep. Maggie Goodlander). Lyme is endemic here &mdash; per-capita case counts in northern New England are among the highest in the country &mdash; and the app is framed around the same public-health priorities Goodlander has been pushing in committee.
+            </p>
+          </div>
+        </article>
+
+        <article class="work-item scene">
+          <div class="work-meta">
+            <p class="work-tag">Live consumer app</p>
+            <p class="work-role">my role: ML</p>
+          </div>
+          <div class="work-body">
+            <h3>FineHero</h3>
+            <p>
+              My uncle's app. People actually pay for it. I build the ML side: a gradient-boosted predictor of dispute-win probability trained on NYC Open Data adjudication records, conditioned on the specific ticket and violation. It's the part of my work that has to run in production, not survive peer review, and that's a different kind of hard.
+            </p>
+          </div>
+        </article>
+
+        <article class="work-item scene">
+          <div class="work-meta">
+            <p class="work-tag">In planning</p>
+            <p class="work-role">paper #2</p>
+          </div>
+          <div class="work-body">
+            <h3>NYC Parking-Fine Fairness Study</h3>
+            <p>
+              Same statistical machinery as the Reddit study, applied to the NYC parking-fine dataset that already lives behind FineHero. Question: do issuance and dismissal rates have spatial or demographic disparities that hold up under regression? I haven't started the analysis. I want to finish the preprint on the Reddit work first.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============= NOW ============= -->
+    <section id="now" class="section section-cream scrolly">
+      <div class="section-heading">
+        <p class="section-marker"><span class="section-num">05</span><span class="section-label">Now</span></p>
+        <h2 class="display">What this term actually looks like.</h2>
+      </div>
+
+      <div class="section-scenes">
+        <ul class="now-list">
+          <li class="scene"><span class="now-verb">running</span> Polyagent live and watching the risk gates fire</li>
+          <li class="scene"><span class="now-verb">writing up</span> the Reddit study for an arXiv preprint</li>
+          <li class="scene"><span class="now-verb">paper-trading</span> Cadence and watching live-vs-backtest Sharpe</li>
+          <li class="scene"><span class="now-verb">shipping</span> Trace for the Congressional App Challenge submission</li>
+          <li class="scene"><span class="now-verb">building</span> the ML layer for FineHero</li>
+          <li class="scene"><span class="now-verb">taking</span> Mathematical Modeling at Hanover High</li>
+          <li class="scene"><span class="now-verb">planning</span> another Dartmouth course over the summer</li>
+          <li class="scene"><span class="now-verb">running</span> Investment Club: equity research and macro</li>
+          <li class="scene"><span class="now-verb">prepping</span> a UPenn M&amp;T ED application for Nov 2026</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============= CREDENTIALS ============= -->
+    <section id="background" class="section scrolly">
+      <div class="section-heading">
+        <p class="section-marker"><span class="section-num">06</span><span class="section-label">Background</span></p>
+        <h2 class="display">Coursework &amp; activities.</h2>
+      </div>
+
+      <div class="section-scenes">
+        <div class="two-col">
+          <div class="scene">
+            <h3 class="col-heading">Coursework</h3>
+            <ul class="record-list">
+              <li>
+                <h4>Mathematical Foundations of Machine Learning</h4>
+                <p class="meta">Dartmouth College, MATH/CS. Took it as a junior.</p>
+              </li>
+              <li>
+                <h4>Mathematical Modeling</h4>
+                <p class="meta">Hanover High School, in progress.</p>
+              </li>
+              <li>
+                <h4>Inspirit AI Scholars</h4>
+                <p class="meta">Online research program. Completed.</p>
+              </li>
+              <li>
+                <h4>Hanover High School</h4>
+                <p class="meta">Class of 2027. GPA above 3.8.</p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="scene">
+            <h3 class="col-heading">Activities</h3>
+            <ul class="record-list">
+              <li>
+                <h4>President, Investment Club</h4>
+                <p class="meta">Equity research, portfolio construction, macro.</p>
+              </li>
+              <li>
+                <h4>Varsity Tennis</h4>
+                <p class="meta">Hanover High School.</p>
+              </li>
+              <li>
+                <h4>Independent NLP research</h4>
+                <p class="meta">Self-directed. Mentored by Dartmouth ML researchers.</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============= CONTACT ============= -->
+    <section id="contact" class="section section-dark scrolly">
+      <div class="section-heading">
+        <p class="section-marker"><span class="section-num">07</span><span class="section-label">Contact</span></p>
+        <h2 class="display">The fastest way to reach me is email.</h2>
+      </div>
+
+      <div class="section-scenes">
+        <p class="contact-blurb scene">
+          I read everything that isn't spam. If you want to talk about prediction markets, NLP, mental-health language work, applied ML, or anything in this neighborhood, write me.
+        </p>
+        <ul class="contact-list">
+          <li class="scene">
+            <a href="mailto:benjamin.a.hannan@gmail.com">benjamin.a.hannan@gmail.com</a>
+            <span class="contact-meta">email</span>
+          </li>
+          <li class="scene">
+            <a href="https://github.com/benjaminhannan" target="_blank" rel="noopener">github.com/benjaminhannan</a>
+            <span class="contact-meta">code</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; Benjamin Hannan &nbsp;&middot;&nbsp; Hanover, NH &nbsp;&middot;&nbsp; this page is hand-written HTML, not a template</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
