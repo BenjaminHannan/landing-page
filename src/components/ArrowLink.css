@@ -1,0 +1,48 @@
+.arrow-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--step-small);
+  letter-spacing: 0.005em;
+}
+
+.arrow-link svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform 0.32s var(--ease);
+}
+
+.arrow-link:hover svg {
+  transform: translate(2px, -2px);
+}
+
+.arrow-link[data-variant='quiet'] > span:first-child {
+  padding-bottom: 2px;
+  border-bottom: 1px solid var(--line);
+  transition: border-color 0.3s var(--ease);
+}
+
+.arrow-link[data-variant='quiet']:hover > span:first-child {
+  border-bottom-color: var(--accent);
+}
+
+.arrow-link[data-variant='quiet']:hover svg {
+  transform: translateX(3px);
+}
+
+.arrow-link[data-variant='solid'] {
+  padding: 0.7rem 1.35rem;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--bg);
+  transition: opacity 0.3s var(--ease);
+}
+
+.arrow-link[data-variant='solid']:hover {
+  opacity: 0.88;
+}

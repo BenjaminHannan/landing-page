@@ -1,0 +1,72 @@
+.palette {
+  display: flex;
+  align-items: center;
+}
+
+.palette__button {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 40px;
+  border-radius: 6px;
+  touch-action: manipulation;
+}
+
+.palette__rules {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 26px;
+  height: 17px;
+}
+
+.palette__rule {
+  display: block;
+  width: 26px;
+  height: 1px;
+  background: var(--ink-faint);
+  border-radius: 1px;
+  transform-origin: left center;
+  transition: width 0.45s var(--ease), background-color 0.45s var(--ease),
+    height 0.45s var(--ease), margin-left 0.45s var(--ease), opacity 0.45s var(--ease);
+  transition-delay: var(--rule-delay);
+}
+
+/* Every other rule is short and indented — the asymmetry is what stops this
+   reading as a hamburger menu. */
+.palette__rule:nth-child(2n) {
+  width: 18px;
+  margin-left: 8px;
+}
+
+.palette__rule[data-active='true'] {
+  height: 2px;
+  background: var(--accent);
+}
+
+.palette__button:hover .palette__rule,
+.palette__button:focus-visible .palette__rule {
+  width: 26px;
+  margin-left: 0;
+  opacity: 0.95;
+}
+
+.palette__button:hover .palette__rule[data-active='true'] {
+  animation: rule-tick 0.6s var(--ease) var(--rule-delay) both;
+}
+
+.palette__button:active .palette__rules {
+  transform: translateY(1px);
+}
+
+@keyframes rule-tick {
+  0% {
+    transform: scaleX(1);
+  }
+  45% {
+    transform: scaleX(0.72);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}

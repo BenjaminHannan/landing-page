@@ -1,0 +1,100 @@
+.finder {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: start;
+}
+
+.finder__panel {
+  display: grid;
+  gap: 1rem;
+  justify-items: start;
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  position: sticky;
+  top: 6rem;
+  transition: background-color 0.5s var(--ease);
+}
+
+.finder__region {
+  font-size: var(--step-eyebrow);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+.finder__title {
+  font-size: var(--step-h3);
+  line-height: 1.2;
+}
+
+.finder__privacy {
+  font-size: var(--step-small);
+  line-height: 1.7;
+  color: var(--ink-soft);
+}
+
+.finder__links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.25rem;
+  margin-top: 0.25rem;
+}
+
+.finder__crisis {
+  margin-top: 0.75rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.75rem;
+  line-height: 1.6;
+  color: var(--ink-muted);
+  width: 100%;
+}
+
+.finder__crisis strong {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.finder__features {
+  list-style: none;
+  display: grid;
+}
+
+.finder__features li {
+  display: grid;
+  gap: 0.4rem;
+  padding-block: 1.25rem;
+  border-top: 1px solid var(--line-soft);
+}
+
+.finder__features li:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.finder__features h4 {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.finder__features p {
+  font-size: var(--step-small);
+  line-height: 1.65;
+  color: var(--ink-muted);
+  max-width: 54ch;
+}
+
+@media (max-width: 860px) {
+  .finder {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .finder__panel {
+    position: static;
+  }
+}

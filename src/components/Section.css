@@ -1,0 +1,26 @@
+.section {
+  padding-block: clamp(4.5rem, 9vw, 8rem);
+  border-top: 1px solid var(--line-soft);
+}
+
+.section__head {
+  display: grid;
+  gap: 1.25rem;
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+.section__title {
+  font-size: var(--step-h2);
+  max-width: 16ch;
+  text-wrap: balance;
+}
+
+.section__intro {
+  font-size: var(--step-lede);
+  line-height: 1.55;
+  max-width: 56ch;
+}
+
+.section__body {
+  transition-delay: 0.08s;
+}

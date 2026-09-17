@@ -1,0 +1,118 @@
+.progression {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.progression__plot {
+  position: relative;
+  height: 22px;
+  margin-inline: 7px;
+}
+
+.progression__track {
+  position: absolute;
+  inset-inline: -7px;
+  top: 10px;
+  height: 1px;
+  background: var(--line);
+}
+
+/* The connector is the "change" itself; it sits in the soft step so the
+   strong endpoint stays the loudest thing on the plot. */
+.progression__join {
+  position: absolute;
+  top: 9px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--mark-soft);
+  opacity: 0.55;
+}
+
+.progression__dot {
+  position: absolute;
+  top: 4px;
+  width: 13px;
+  height: 13px;
+  margin-left: -6.5px;
+  border-radius: 50%;
+  /* 2px surface ring keeps the marks separated from the track and each other. */
+  box-shadow: 0 0 0 2px var(--surface);
+}
+
+.progression__dot[data-step='soft'] {
+  background: var(--mark-soft);
+}
+
+.progression__dot[data-step='strong'] {
+  background: var(--mark-strong);
+}
+
+.progression__scale {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.6875rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-faint);
+}
+
+.progression__readout {
+  display: grid;
+  gap: 0.875rem;
+  margin-top: 0.5rem;
+}
+
+.progression__item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: baseline;
+  gap: 0.75rem;
+}
+
+.progression__item::before {
+  content: '';
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  align-self: center;
+}
+
+.progression__item[data-step='soft']::before {
+  background: var(--mark-soft);
+}
+
+.progression__item[data-step='strong']::before {
+  background: var(--mark-strong);
+}
+
+.progression__item dt {
+  font-size: var(--step-small);
+  color: var(--ink-soft);
+}
+
+.progression__item dd {
+  grid-column: 2;
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.progression__value {
+  font-size: 1.375rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.progression__meta {
+  font-size: 0.75rem;
+  color: var(--ink-faint);
+}
+
+.progression figcaption {
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: var(--ink-faint);
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--line);
+}
