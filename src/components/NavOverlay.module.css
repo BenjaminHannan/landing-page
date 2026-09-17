@@ -1,0 +1,105 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 6rem var(--gutter) 3rem;
+  background: var(--paper);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.42s var(--ease), visibility 0s linear 0.42s;
+}
+
+.overlay[data-open='true'] {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.42s var(--ease), visibility 0s;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--rule-soft);
+}
+
+.item {
+  border-bottom: 1px solid var(--rule-soft);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.5s var(--ease), transform 0.5s var(--ease);
+}
+
+.overlay[data-open='true'] .item {
+  opacity: 1;
+  transform: none;
+  /* Each row arrives a beat after the one above it. */
+  transition-delay: calc(0.06s * var(--i) + 0.08s);
+}
+
+.link {
+  display: flex;
+  align-items: baseline;
+  gap: clamp(1rem, 4vw, 2.5rem);
+  padding: clamp(0.7rem, 2vw, 1.1rem) 0;
+  text-decoration: none;
+  color: var(--ink);
+  transition: color 0.3s var(--ease);
+}
+
+.index {
+  color: var(--ink-faint);
+  transition: color 0.3s var(--ease), transform 0.4s var(--ease);
+}
+
+.label {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 7vw, 3.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  transition: transform 0.45s var(--ease);
+}
+
+.link:hover .label,
+.link:focus-visible .label {
+  transform: translateX(0.5rem);
+}
+
+.link:hover .index,
+.link:focus-visible .index,
+.item[data-active='true'] .index {
+  color: var(--accent);
+}
+
+.item[data-active='true'] .label {
+  font-style: italic;
+}
+
+.foot {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin-top: clamp(2rem, 6vw, 3.5rem);
+  color: var(--ink-faint);
+  opacity: 0;
+  transition: opacity 0.5s var(--ease) 0.34s;
+}
+
+.overlay[data-open='true'] .foot {
+  opacity: 1;
+}
+
+.foot a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 2px;
+  transition: color 0.3s var(--ease), border-color 0.3s var(--ease);
+}
+
+.foot a:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}

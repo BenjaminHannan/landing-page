@@ -1,0 +1,23 @@
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--ink-faint);
+  margin-bottom: 0.75rem;
+}
+
+.dot {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.title {
+  font-size: clamp(1.35rem, 3vw, 1.75rem);
+  font-style: italic;
+  line-height: 1.25;
+  margin-bottom: clamp(1rem, 2.5vw, 1.4rem);
+  max-width: var(--measure);
+}

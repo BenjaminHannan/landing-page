@@ -1,0 +1,55 @@
+.header {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem var(--gutter);
+  transition: background-color 0.4s var(--ease), border-color 0.4s var(--ease);
+  border-bottom: 1px solid transparent;
+}
+
+/* A hairline and a wash of paper appear only once you have started reading. */
+.header[data-scrolled='true'][data-open='false'] {
+  background: color-mix(in srgb, var(--paper) 86%, transparent);
+  border-bottom-color: var(--rule-soft);
+  backdrop-filter: saturate(150%) blur(10px);
+  -webkit-backdrop-filter: saturate(150%) blur(10px);
+}
+
+.left,
+.right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.wordmark {
+  color: var(--ink);
+  text-decoration: none;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity 0.5s var(--ease), transform 0.5s var(--ease);
+  pointer-events: none;
+}
+
+/* The name slides in to replace the hero heading as it scrolls away. */
+.header[data-scrolled='true'] .wordmark,
+.header[data-open='true'] .wordmark {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+
+.role {
+  color: var(--ink-faint);
+}
+
+@media (max-width: 34rem) {
+  .role {
+    display: none;
+  }
+}

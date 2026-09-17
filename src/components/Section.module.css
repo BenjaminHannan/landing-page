@@ -1,0 +1,40 @@
+.section {
+  display: grid;
+  grid-template-columns: minmax(0, 9rem) minmax(0, var(--measure));
+  gap: clamp(1.25rem, 4vw, 3rem);
+  padding: clamp(4.5rem, 11vw, 8.5rem) var(--gutter);
+  border-top: 1px solid var(--rule-soft);
+}
+
+.rail {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  color: var(--ink-faint);
+  padding-top: 0.6rem;
+}
+
+.rail .number {
+  color: var(--accent);
+}
+
+.body {
+  min-width: 0;
+}
+
+.title {
+  font-size: clamp(2.1rem, 6vw, 3.25rem);
+  margin-bottom: clamp(1.25rem, 3vw, 2rem);
+}
+
+@media (max-width: 54rem) {
+  .section {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .rail {
+    flex-direction: row;
+    gap: 1rem;
+    padding-top: 0;
+  }
+}

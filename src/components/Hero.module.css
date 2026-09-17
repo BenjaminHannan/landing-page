@@ -1,0 +1,74 @@
+.hero {
+  display: grid;
+  align-content: center;
+  min-height: min(92svh, 46rem);
+  padding: clamp(7rem, 16vw, 10rem) var(--gutter) clamp(3.5rem, 8vw, 5rem);
+}
+
+.name {
+  color: var(--ink-faint);
+  margin-bottom: clamp(1.75rem, 5vw, 2.75rem);
+}
+
+.lead {
+  font-size: clamp(2.6rem, 9vw, 5rem);
+  max-width: 16ch;
+  margin-bottom: clamp(1.25rem, 3vw, 1.75rem);
+}
+
+.lead em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.body {
+  max-width: var(--measure);
+  color: var(--ink-soft);
+  font-size: clamp(1.02rem, 0.98rem + 0.3vw, 1.15rem);
+}
+
+.jump {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 2rem;
+  margin-top: clamp(2.5rem, 6vw, 3.5rem);
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--rule-soft);
+}
+
+.jumpLink {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  color: var(--ink-soft);
+  text-decoration: none;
+  transition: color 0.3s var(--ease);
+}
+
+.jumpLink:hover {
+  color: var(--accent);
+}
+
+.jumpIndex {
+  color: var(--ink-faint);
+}
+
+.jumpLink:hover .jumpIndex {
+  color: var(--accent);
+}
+
+.arrow {
+  display: inline-block;
+  transition: transform 0.4s var(--ease);
+}
+
+.jumpLink:hover .arrow {
+  transform: translateY(3px);
+}
+
+@media (max-width: 34rem) {
+  .jump {
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+}

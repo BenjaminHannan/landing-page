@@ -1,0 +1,91 @@
+.button {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin-left: -0.6rem; /* optically aligns the lines to the page gutter */
+  border-radius: 4px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.lines {
+  position: relative;
+  width: 1.5rem;
+  height: 0.875rem;
+}
+
+.line {
+  position: absolute;
+  left: 0;
+  height: 1.5px;
+  background: var(--ink);
+  border-radius: 1px;
+  transform-origin: center;
+  transition:
+    width 0.55s var(--ease),
+    transform 0.55s var(--ease),
+    opacity 0.3s var(--ease),
+    background-color 0.4s var(--ease);
+}
+
+/* Closed: three lines of deliberately different lengths. The middle one is a
+   scroll indicator — it grows from a third to full width as you read down. */
+.line:nth-child(1) {
+  top: 0;
+  width: 100%;
+  transition-delay: 0s;
+}
+
+.line:nth-child(2) {
+  top: calc(50% - 0.75px);
+  width: calc(36% + var(--progress, 0) * 64%);
+  transition-delay: 0.04s;
+}
+
+.line:nth-child(3) {
+  top: calc(100% - 1.5px);
+  width: 68%;
+  transition-delay: 0.08s;
+}
+
+/* Hover pulls the short lines out to full width, one after the other. */
+.button:hover .line,
+.button:focus-visible .line {
+  width: 100%;
+}
+
+.button:hover .line:nth-child(2),
+.button:focus-visible .line:nth-child(2) {
+  transition-delay: 0.05s;
+}
+
+.button:hover .line:nth-child(3),
+.button:focus-visible .line:nth-child(3) {
+  transition-delay: 0.1s;
+}
+
+/* Open: the stack folds into a cross. */
+.button[data-open='true'] .line {
+  width: 100%;
+}
+
+.button[data-open='true'] .line:nth-child(1) {
+  transform: translateY(6.25px) rotate(45deg);
+}
+
+.button[data-open='true'] .line:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0.2);
+  transition-delay: 0s;
+}
+
+.button[data-open='true'] .line:nth-child(3) {
+  transform: translateY(-6.25px) rotate(-45deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .line {
+    transition-delay: 0s !important;
+  }
+}
